@@ -4,6 +4,12 @@ module "rg-name" {
   location = "eastus"
 
 }
+module "rg-name1" {
+  source   = "../Child_module/azurerm_resource_group"
+  name     = "raj-rg1"
+  location = "eastus"
+
+}
 
 module "virtual_network" {
     depends_on = [ module.rg-name ]
